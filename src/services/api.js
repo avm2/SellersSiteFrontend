@@ -1,8 +1,8 @@
 // services/api.js
 
-import axios from 'axios';
+import axios from "axios";
 
-const BASE_URL = 'http://localhost:3001/api'; // Update with your backend URL
+const BASE_URL = "https://sellersite-backend.onrender.com/api"; // Update with your backend URL
 
 const fetchListings = async () => {
   const response = await axios.get(`${BASE_URL}/listings`);
@@ -10,7 +10,10 @@ const fetchListings = async () => {
 };
 
 const updateLikes = async (listingId, likes) => {
-  const response = await axios.put(`${BASE_URL}/listings/${listingId}/update-likes`, { likes });
+  const response = await axios.put(
+    `${BASE_URL}/listings/${listingId}/update-likes`,
+    { likes }
+  );
   return response.data;
 };
 
